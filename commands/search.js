@@ -1,14 +1,14 @@
 const search = require("yt-search");
 
 module.exports.run = async (bot, message, args, ops) => {
-  search(args.join(" "), function(err, res) {
-    if(!args[0]) return message.channel.send("No input");
+  search(args.join(' '), function(err, res) {
+    //if(!args[0]) return message.channel.send("No input");
     
     if(err) return message.channel.send("Oops, something went wrong");
   
     let videos = res.videos.slice(0, 10);
     
-    let resp = "";
+    let resp = '';
     for(var i in videos) {
       resp += `**${parseInt(i)+1}** | ${videos[i].title}\n`;
       
@@ -28,10 +28,8 @@ module.exports.run = async (bot, message, args, ops) => {
     
     collector.once("collect", function(m){  
       let commandFile = require("./play.js");
-      commandFile.run(bot, message, this.videos[parseInt(m.content)-1], ops);
+      commandFile.run(bot, message, [this.videos[parseInt(m.content)-1].url], ops);
     });
-    
-    
   });
 
 }
