@@ -1,0 +1,2 @@
+# scotix
+music bot
