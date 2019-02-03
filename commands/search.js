@@ -1,6 +1,4 @@
 const search = require("yt-search");
-const Discord = require("discord.js");
-const ytdl = require("ytdl-core");
 
 module.exports.run = async (bot, message, args, ops) => {
   search(args.join(" "), function(err, res) {
@@ -16,7 +14,7 @@ module.exports.run = async (bot, message, args, ops) => {
       
     }
     
-    if(!videos.length) return message.reply("No results found")
+    //if(!videos.length) return message.reply("No results found")
     
     resp += `\n**Choose a number inbetween 1-${videos.length}**`;
     
@@ -28,18 +26,7 @@ module.exports.run = async (bot, message, args, ops) => {
     
     collector.videos = videos;
     
-    collector.once("collect", function(m){
-      /*let fetched = ops.active.get(message.guild.id) || {};
-      
-      let info = ytdl.getInfo(this.videos[parseInt(m.content)-1].url);
-      
-      fetched.queue.push({
-      songTitle: info.title,
-      requester: message.author.tag,
-      url: this.videos[parseInt(m.content)-1].url,
-      announceChannel: message.channel.id
-      })*/
-      
+    collector.once("collect", function(m){  
       let commandFile = require("./play.js");
       commandFile.run(bot, message, this.videos[parseInt(m.content)-1], ops);
     });

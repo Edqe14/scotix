@@ -7,11 +7,10 @@ module.exports.run = async (bot, message, args, ops) => {
   randomPuppy("headpats").then(url => {
       let embed = new Discord.RichEmbed()
       .setColor("#07b1bc")
-      .setTitle(`${message.author.tag} pats ${target.tag}`)
+      .setTitle(`${message.author.mention} pats ${target.mention}`)
       .addField(`${url}`);
 
-      message.channel.send(embed)
-      message.channel.send(`${url}`)
+      message.channel.send(embed).then(message.channel.send(`${url}`)) 
   })
 }
 
