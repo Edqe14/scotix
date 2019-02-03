@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args, ops) => {
   .setFooter("Scotix | Alpha 1.1") 
 
   message.channel.send(embed).then(function(message) {
-    message.sendFile(dirr[Math.floor(Math.random() * dirr.length)])
+    message.setAttachment(dirr[Math.floor(Math.random() * dirr.length)])
   })
 }
 
