@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  let musc = [">play (link) | Only Youtube Links for now", "**>pause | Pause current song**", ">resume | Resume paused song", "**>dc | Leave the voice channel**", ">queue | Queue List", "**>skip | Skip a song**", ">volume | Set the volume (0-200)"]
+  let musc = [">(p)lay (link) | Only Youtube Links for now", "**>pause | Pause current song**", ">(r)esume | Resume paused song", "**>dc | Leave the voice channel**", ">(q)ueue | Queue List", "**>(s)kip | Skip a song**", ">(v)olume | Set the volume (0-200)"]
   let mod = [">ban (tag) (reason) | Ban a user", "**>kick (tag) (reason) | Kick a user**", ">purge (number) | Clear messages"]
   let els = [">ping | Check your ping", "**>help | Show this embed**", ">ascii (text) | ASCII Art (No Emojis)"]
   let img = [">pat <user> | Pat, pat :3"]
