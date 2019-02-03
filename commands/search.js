@@ -27,5 +27,5 @@ module.exports.run = (bot, message, args, ops) => {
 }
 
 module.exports.help = {
-  name: "search"
+  name: "srch2"
 };
