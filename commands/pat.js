@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args, ops) => {
   } else {
     let embed = new Discord.RichEmbed()
     .setColor("#07b1bc")
-    .setTitle(`${message.author.tag} pats ${target.tag}`)
+    .setTitle(`${message.author.tag} pats ` + target.tag)
     .setFooter("Scotix | Alpha 1.1") 
     .setImage(dirr[Math.floor(Math.random() * dirr.length)])
 
