@@ -13,10 +13,9 @@ module.exports.run = async (bot, message, args, ops) => {
   .setColor("#07b1bc")
   .setTitle(`${message.author.tag} pats ${target}`)
   .setFooter("Scotix | Alpha 1.1") 
+  .setImage(dirr[Math.floor(Math.random() * dirr.length)])
 
-  message.channel.send(embed).then(function(message) {
-    message.setAttachment(dirr[Math.floor(Math.random() * dirr.length)])
-  })
+  message.channel.send(embed);
 }
 
 module.exports.help = {
