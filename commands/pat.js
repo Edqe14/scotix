@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args, ops) => {
   let target = message.guild.member(message.mentions.users.first());
   if(!target) return message.channel.send("Who you want to pat? :3");
   
-  fs.readdir("./commands/pat/", (err, files) => {
+  fs.readdir("./pat/", (err, files) => {
     if (err) console.error(err);
     let giffiles = files.filter(f => f.split(".").pop() === "gif");
   
