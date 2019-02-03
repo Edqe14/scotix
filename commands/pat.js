@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const image = require("get-image")
 
 module.exports.run = async (bot, message, args, ops) => {
   let target = message.guild.member(message.mentions.users.first());
