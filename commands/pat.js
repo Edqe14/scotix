@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, ops) => {
-  let target = message.guild.member(message.mentions.users.first());
+  let target = message.mentions.users.first();
   if(!target) return message.channel.send("Who you want to pat? :3");
   
   const dirr = [
@@ -11,10 +11,12 @@ module.exports.run = async (bot, message, args, ops) => {
 
   let embed = new Discord.RichEmbed()
   .setColor("#07b1bc")
-  .setTitle(`${message.author.tag} pats ${target.tag}`)
-  .addField(dirr[Math.floor(Math.random() * dirr.length)])
+  .setTitle(`${message.author.tag} pats ${target}`)
+  .setFooter("Scotix | Alpha 1.1") 
 
-  message.channel.send(embed)
+  message.channel.send(embed).then(function(message) {
+    message.sendFile(dirr[Math.floor(Math.random() * dirr.length)])
+  })
 }
 
 module.exports.help = {

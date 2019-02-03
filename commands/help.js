@@ -11,6 +11,7 @@ module.exports.run = async (bot, message, args) => {
   .addField(":musical_note: __Music__", musc, true)
   .addField(":tools: __Moderation__", mod, true)
   .addField(":small_blue_diamond: __Other__", els, true)
+  .setFooter("Scotix | Alpha 1.1") 
   
   return message.channel.send(embed).then(function(message) {
     message.react("👍");
