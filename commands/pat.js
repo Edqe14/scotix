@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args, ops) => {
     "https://giant.gfycat.com/FabulousCavernousAegeancat.gif",
     "https://i.redd.it/zu24537rcsd21.png",
     "https://media1.tenor.com/images/0cf73e99f7e58215b2deee3bdb158fe2/tenor.gif?itemid=12018811",
-    "https://media.tenor.com/images/37e36267891a33899bb2d88232f9f637/tenor.gif"
+    "https://tenor.com/view/head-pat-gif-10204936"
   ]
   
   let target = message.mentions.users.first();
