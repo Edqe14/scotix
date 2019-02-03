@@ -9,7 +9,9 @@ module.exports.run = (bot, message, args, ops) => {
     for (var i in videos) {
       resp += `**${parseInt(i)+1}** | \`${videos[i].title}\`\n`;
     }
-    resp += `\n**Chose a number between \`1-${videos.length}\``;
+    resp += `\n**Chose a number between** \`1-${videos.length}\``;
+
+    if(!videos.length) return message.reply("No results found");
 
     message.channel.send(resp);
 

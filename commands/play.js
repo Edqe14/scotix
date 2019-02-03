@@ -4,7 +4,7 @@ const ytdl = require("ytdl-core");
 module.exports.run = async (bot, message, args, ops) => {
     if(!message.member.voiceChannel) return message.channel.send("Please join a voice channel!");
   
-    if(!args[0]) return message.channel.send("Please put a youtube URL");
+    if(!args[0]) return message.channel.send("Please put a youtube URL/Title");
   
     let validate = await ytdl.validateURL(args[0]);
   
