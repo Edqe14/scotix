@@ -23,7 +23,7 @@
     "ibsearch": "^1.0.1",
     "image-downloader": "^3.4.2",
     "yt-search": "^0.4.1",
-    "random-puppy": "^1.1.8"
+    "random-puppy": "^1.1.0"
   },
   "engines": {
     "node": "8.4.0"
