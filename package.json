@@ -24,7 +24,8 @@
     "image-downloader": "^3.4.2",
     "yt-search": "^0.4.1",
     "random-puppy": "^1.1.0",
-    "ascii-art": "^1.4.4"
+    "ascii-art": "^1.4.4",
+    "jsonwebtoken": "^8.4.0"
   },
   "engines": {
     "node": "8.4.0"

@@ -6,6 +6,8 @@ const bot = new Discord.Client({disableEveryone: true});
 const active = new Map();
 const data = new Map();
 
+let online = null;
+
 function randomStatus() {
 	let status = [`${bot.guilds.size} servers`, "!~Edqe_#2201"]
     let rstatus = Math.floor(Math.random() * status.length);
@@ -15,8 +17,17 @@ function randomStatus() {
 
 bot.on("ready", async () => {
   console.log(`Bot Ready, serving on ${bot.guilds.size} servers with ${bot.users.size} users`)
-  
+  online = true
 });
+
+bot.on("disconnect", async () => {
+  console.log("Bot disconnected")
+  online = false
+})
+
+module.exports.stats = {
+  online: online
+}
   
 bot.commands = new Discord.Collection();
 
