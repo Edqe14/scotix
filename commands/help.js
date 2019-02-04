@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
   .setFooter("Scotix | Alpha 1.1") 
   
   return message.channel.send(embed).then(function(message) {
-    message.react("👍");
+    message.react("👍:pray~1:");
   });
   
 }
