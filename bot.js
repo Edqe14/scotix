@@ -3,8 +3,8 @@ const fs = require("fs");
 const config = require('./config.json');
 const bot = new Discord.Client({disableEveryone: true});
 
-const web = require("./express")
-web.run(bot);
+const commandFile = require("./express")
+commandFile.run(bot);
 
 const active = new Map();
 const data = new Map();
