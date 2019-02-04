@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const botjs = require(`./bot`)
 
-app.get('/api', function(req, res) {
+app.get('/', function(req, res) {
     res.json({
         stat: botjs.stats.online
     });
