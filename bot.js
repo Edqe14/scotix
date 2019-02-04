@@ -13,7 +13,7 @@ const data = new Map();
 
     }; setInterval(randomStatus, 5000); */
 bot.on("ready", async () => {
-  console.log("Bot Ready")
+  console.log("Bot Ready, serving on ${bot.guilds.size} servers with ${bot.users.size} users")
   
 });
   
