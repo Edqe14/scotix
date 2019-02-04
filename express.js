@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const botjs = require(`./bot`)
+let botjs = require(`./bot`)
 
 app.get('/', function(req, res) {
     res.json({
