@@ -8,6 +8,7 @@ module.exports.run = async (bot, message, args, ops) => {
     .setColor("#07b1bc")
     .setTitle(`${message.author.tag} avatar`)
     .setImage(userIcon)
+    .setFooter("Scotix | Alpha 1.1") 
     
     message.channel.send(embed)
   } else {
@@ -16,6 +17,7 @@ module.exports.run = async (bot, message, args, ops) => {
     .setColor("#07b1bc")
     .setTitle(`${target.tag} avatar`)
     .setImage(targetIcon)
+    .setFooter("Scotix | Alpha 1.1") 
     
     message.channel.send(embed1)
   }
