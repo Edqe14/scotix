@@ -36,14 +36,24 @@ module.exports.run = async (bot, message, args, ops) => {
     else {
       if(message.member.voiceChannel !== message.guild.me.voiceChannel) return message.channel.send("You isn't on same voice channel");
       
-      message.channel.send(`Song added to queue: ${info.title} | Requested by: ${message.author.tag}`);
+      let embedQ = new Discord.RichEmbed()
+      .setColor("#07b1bc")
+      .addField(`Song added to queue: ${info.title} | Requested by: ${message.author.tag}`)
+      .setFooter("Scotix | Alpha 1.1") 
+
+      message.channel.send(embedQ);
     }
   
     ops.active.set(message.guild.id, data);
 
-    
     async function play(bot, data) {
-      bot.channels.get(data.queue[0].announceChannel).send(`Now Playing: ${data.queue[0].songTitle} | Requested by: ${data.queue[0].requester}`);
+
+      let embedP = new Discord.RichEmbed()
+      .setColor("#07b1bc")
+      .addField(`Now Playing: ${data.queue[0].songTitle} | Requested by: ${data.queue[0].requester}`)
+      .setFooter("Scotix | Alpha 1.1") 
+
+      bot.channels.get(data.queue[0].announceChannel).send(embedP);
       data.dispatcher = await data.connection.playStream(ytdl(data.queue[0].url, { filter: "audioonly" }));
       data.dispatcher.guildID = data.guildID;
   
