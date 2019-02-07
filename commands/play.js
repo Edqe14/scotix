@@ -38,8 +38,7 @@ module.exports.run = async (bot, message, args, ops) => {
       
       let embedQ = new Discord.RichEmbed()
       .setColor("#07b1bc")
-      .addField("Song added to queue:")
-      .addField(`${info.title}`, `Requested by: ${message.author.tag}`)
+      .addField("Song added to queue:", `**${info.title}** | Requested by: **${message.author.tag}**`)
       .setFooter("Scotix | Alpha 1.1") 
 
       message.channel.send(embedQ);
@@ -51,8 +50,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
       let embedP = new Discord.RichEmbed()
       .setColor("#07b1bc")
-      .addField("Now Playing:")
-      .addField(`${data.queue[0].songTitle}`, `Requested by: ${data.queue[0].requester}`)
+      .addField("Now Playing:", `**${data.queue[0].songTitle}** | Requested by: **${data.queue[0].requester}**`)
       .setFooter("Scotix | Alpha 1.1") 
 
       bot.channels.get(data.queue[0].announceChannel).send(embedP);
