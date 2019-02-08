@@ -11,7 +11,7 @@ const data = new Map();
 let online = null;
 
 function randomStatus() {
-	let status = [`${bot.guilds.size} servers`, "!~Edqe_#2201"]
+	let status = [`${bot.guilds.size} servers`, "!~Edqe_#4899"]
     let rstatus = Math.floor(Math.random() * status.length);
     bot.user.setActivity(status[rstatus], {type: 'LISTENING'});
 
