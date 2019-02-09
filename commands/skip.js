@@ -14,6 +14,12 @@ module.exports.run = async (bot, message, args, ops) => {
       return fetched.dispatcher.emit("end");
     }
   }  
+
+  if(message.member.hasPermission("ADMINISTRATOR") || message.member == message.guild.owner) {
+    message.channel.send("a Admin just skipped the song")
+    
+    return fetched.dispatcher.emit("end")
+  }
   
   let userCount = message.member.voiceChannel.members.size;
   let required = Math.ceil(userCount/2);
