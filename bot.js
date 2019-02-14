@@ -67,7 +67,7 @@ bot.on("message", message => {
   if (!command.startsWith(prefix)) return;
 
   let cmd = bot.commands.get(command.slice(prefix.length));
-  if (cmd) cmd.run(bot, message, args, ops);
+  if (cmd) cmd.run(bot, message, args, ops, data);
 });
 
 bot.login(process.env.TOKEN);
