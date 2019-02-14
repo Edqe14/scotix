@@ -26,10 +26,9 @@ module.exports.run = async (bot, message, args, ops) => {
   .addField("Server Owner", message.guild.owner, true)
   .addField("Server Region", message.guild.region, true)
   .addField("Channel + Category Count", message.guild.channels.size, true)
-  .addBlankField()
   .addField("Total Member (Human/Bot)", message.guild.memberCount + ` (${userC(message.guild)}/${botC(message.guild)})`, true)
-  .addField("Total Human", userC(message.guild), true)
-  .addField("Total Bot", botC(message.guild))
+  // .addField("Total Human", userC(message.guild), true)
+  // .addField("Total Bot", botC(message.guild))
   .setFooter("Server created at:")
   .setTimestamp(message.guild.createdAt);
   
