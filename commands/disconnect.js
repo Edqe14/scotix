@@ -9,6 +9,8 @@ module.exports.run = async (bot, message, args, ops) => {
   
   let role = message.guild.roles.find(`name`, "DJ");
   if(message.member.hasPermission("ADMINISTRATOR") || message.member.roles.has(role.id)){
+    ops.active.delete(message.guild.id)
+    
     message.member.voiceChannel.leave();
     return await message.channel.send("Leaving voice channel...");
   } else {
