@@ -1,9 +1,13 @@
 const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
-  if(!args[0]) return message.channel.send("No input")
+  if(!args[0]) return message.channel.send({embed: {
+    description: "Invalid input! Usage: >poll (question) (option [devide with ;])"
+
+  }})
   
-  let list = args.join(" ").split(";")
+  let question = args[0]
+  let list = args[1].split(";")
   console.log(list)
   if(!list[1]) return message.channel.send("Please add more option!")
   
@@ -16,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
   let embed = new Discord.RichEmbed()
   .setColor("#07b1bc")
   .setTitle("__Poll__")
-  .addField(props, 'Please choose one option!')
+  .addField(question, props)
   .setFooter("Scotix | Alpha 1.1") 
   
   message.channel.send(embed).then(async function(message) {
