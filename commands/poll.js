@@ -7,6 +7,8 @@ module.exports.run = async (bot, message, args) => {
   }})
   
   let question = args[0]
+  if(!args[1]) return message.channel.send('Invalid question! Usage: >poll (question) (option [devide with ;])')
+
   let list = args[1].split(";")
   console.log(list)
   if(!list[1]) return message.channel.send("Please add more option!")
