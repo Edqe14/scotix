@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("#07b1bc")
   .setTitle("__Invite Me!__")
   .addField("Bot", "[Invite Me to your server](https://discordapp.com/api/oauth2/authorize?client_id=524503969284882433&permissions=8&scope=bot)", true)
-  .addField("Discord", "**NOT AVAILABLE YET**", true)
+  .addField("Discord", "[Support Server](https://discord.gg/GMRk6fw)", true)
   .setFooter("Scotix | Alpha 1.1") 
   //.setFooter(`On ${bot.guilds.size} servers with ${bot.users.size} users`)
   
