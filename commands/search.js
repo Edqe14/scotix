@@ -13,7 +13,12 @@ module.exports.run = (bot, message, args, ops) => {
 
     if(!videos.length) return message.reply("No results found");
 
-    message.channel.send(resp);
+    message.channel.send({embed: {
+      color: 0x07b1bc,
+      description: resp
+    }});
+    
+    
 
     const filter = m => !isNaN(m.content) && m.content < videos.length+1 && m.content > 0;
     const collector = message.channel.createMessageCollector(filter);

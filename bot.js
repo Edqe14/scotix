@@ -26,10 +26,6 @@ bot.on("disconnect", async () => {
   console.log("Bot disconnected")
   online = false
 })
-
-module.exports.stats = {
-  online: online
-}
   
 bot.commands = new Discord.Collection();
 

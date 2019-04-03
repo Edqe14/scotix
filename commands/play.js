@@ -65,18 +65,29 @@ module.exports.run = async (bot, message, args, ops) => {
 
   function end(bot, dispatcher) {
     let fetched = ops.active.get(dispatcher.guildID);
+    let toggle = ops.data.get(message.guild.id)
   
-    fetched.queue.shift();
-  
-    if(fetched.queue.length > 0) {
-      ops.active.set(dispatcher.guildID, fetched);
+    if(toggle === 1) {
+      //await fetched.queue.push(fetched.queue.shift())
+      
+      return play(bot, fetched);
+    } else if(toggle === 2){
+      await fetched.queue.push(fetched.queue.shift())
+      
+      return play(bot, fetched);
+    } else { 
+      await fetched.queue.shift()
+      
+      if(fetched.queue.length > 0) {
+        await ops.active.set(dispatcher.guildID, fetched);
     
-      play(bot, fetched);
-    } else {
-      ops.active.delete(dispatcher.guildID);
+        play(bot, fetched);
+      } else {
+        await ops.active.delete(dispatcher.guildID);
     
-      let vc = bot.guilds.get(dispatcher.guildID).me.voiceChannel;
-      if(vc) vc.leave(15000);
+        let vc = bot.guilds.get(dispatcher.guildID).me.voiceChannel;
+        if(vc) await vc.leave(15000);
+      }
     }
   }
 

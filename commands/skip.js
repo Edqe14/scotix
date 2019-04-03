@@ -4,6 +4,9 @@ module.exports.run = async (bot, message, args, ops) => {
   if(!fetched) return message.channel.send("There currently isn't any music playing!");
   
   if(message.member.voiceChannel !== message.guild.me.voiceChannel) return message.channel.send("You isn't on same voice channel");
+
+  let loop = ops.data.get(message.guild.id)
+  if(loop) return message.channel.send("Sorry! Looping is enabled, please disable loop to skip (>loop)")
   
   let role = message.guild.roles.find(`name`, "DJ");
   //if(!role) message.channel.send("There isn't a DJ role");
