@@ -63,7 +63,7 @@ module.exports.run = async (bot, message, args, ops) => {
                        
   }
 
-  function end(bot, dispatcher) {
+  async function end(bot, dispatcher) {
     let fetched = ops.active.get(dispatcher.guildID);
     let toggle = ops.data.get(message.guild.id)
   
