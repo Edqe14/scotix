@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) => {
   let list = args[1].split(";")
   console.log(list)
   if(!list[1]) return message.channel.send("Please add more option!")
+  if(list.length > 5) return message.channel.send("Maximum 5 options!")
   
   let props = ''
   for(var i = 0; list.length > i; i++) {

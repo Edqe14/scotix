@@ -15,7 +15,7 @@ function randomStatus() {
     let rstatus = Math.floor(Math.random() * status.length);
     bot.user.setActivity(status[rstatus], {type: 'LISTENING'});
 
-}; setInterval(randomStatus, 5000); 
+}; setInterval(randomStatus, 15000); 
 
 bot.on("ready", async () => {
   console.log(`Bot Ready, serving on ${bot.guilds.size} servers with ${bot.users.size} users`)
