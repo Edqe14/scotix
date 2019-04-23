@@ -49,7 +49,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("message", message => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-  let prefix = config.prefix;
+  // let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
@@ -58,6 +58,16 @@ bot.on("message", message => {
       active: active,
       data: data
   }
+
+  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))
+  
+  if(!prefixes[message.guild.id]) {
+    prefixes[message.guild.id] = {
+      prefixes: config.prefix
+    }
+  }
+  
+  let prefix = prefixes[message.guild.id].prefixes
   
   if(command.startsWith(bot.user)) return message.channel.send(`Hello ${message.author}, do >help to show help`)
   if (!command.startsWith(prefix)) return;
