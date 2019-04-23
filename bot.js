@@ -69,7 +69,7 @@ bot.on("message", message => {
   
   let prefix = prefixes[message.guild.id].prefixes
   
-  if(command.startsWith(bot.user)) return message.channel.send(`Hello ${message.author}, do >help to show help`)
+  if(command.startsWith(bot.user)) return message.channel.send(`Hello ${message.author}, do ${prefix}help to show help`)
   if (!command.startsWith(prefix)) return;
 
   let cmd = bot.commands.get(command.slice(prefix.length));
