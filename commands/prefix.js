@@ -9,7 +9,7 @@ module.exports.run = async(bot, message, args, ops) => {
   let prefix = prefixes[message.guild.id].prefixes
   let str = ""
   
-  if(prefix) {
+  if(!prefix === undefined) {
     str = prefix
   } else {
     str = ">"
