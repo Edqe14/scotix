@@ -59,7 +59,7 @@ bot.on("message", message => {
       data: data
   }
 
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))
+  let prefixes = JSON.parse(fs.readFileSync("/app/prefixes.json", "utf8"))
   
   if(!prefixes[message.guild.id]) {
     prefixes[message.guild.id] = {
