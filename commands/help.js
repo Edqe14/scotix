@@ -5,6 +5,9 @@ module.exports.run = async (bot, message, args) => {
   let prefixes = JSON.parse(fs.readFileSync("/app/prefixes.json", "utf8"))
   
   let prefix = prefixes[message.guild.id].prefixes
+  if(!prefix) {
+    prefix = ">"
+  }
   
   let musc = [`${prefix}(p)lay (link/title) | Play/Search a song`, `**${prefix}pause | Pause current song**`, `${prefix}(r)esume | Resume paused song`, `**${prefix}dc | Leave the voice channel**`, `${prefix}(q)ueue | Queue List`, `**${prefix}(s)kip | Skip a song**`, `${prefix}(v)olume | Set the volume (0-200)`]
   let mod = [`${prefix}ban (tag) (reason) | Ban a user`, `**${prefix}kick (tag) (reason) | Kick a user**`, `${prefix}purge (number) | Clear messages`]
