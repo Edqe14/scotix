@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
   .addField(":frame_photo: __Images__", img, true)
   .addField(":newspaper: __Information__", inf, true)
   .addField(":small_blue_diamond: __Other__", els, true)
-  .setFooter("Scotix | Alpha 1.1") 
+  .setFooter("Scotix | Alpha 1.1 -|- Created and Developed by Edqe_#0001") 
   
   return message.channel.send(embed).then(function(message) {
     message.react("👍");
