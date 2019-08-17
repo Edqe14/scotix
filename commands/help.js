@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
   let prefixes = JSON.parse(fs.readFileSync("/app/prefixes.json", "utf8"))
   
   let prefix;
-  if(prefixes[message.guild.id].prefixes == undefined) {
+  if(!prefixes[message.guild.id] ||prefixes[message.guild.id].prefixes == undefined) {
     prefix = ">"
   } else {
     prefix = prefixes[message.guild.id].prefixes
