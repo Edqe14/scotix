@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
   let prefixes = JSON.parse(fs.readFileSync("/app/prefixes.json", "utf8"))
